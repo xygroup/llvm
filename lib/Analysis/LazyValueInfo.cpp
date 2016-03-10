@@ -989,7 +989,9 @@ void LazyValueInfoCache::threadEdge(BasicBlock *PredBB, BasicBlock *OldSucc,
 
     if (!changed) continue;
     
-    worklist.insert(worklist.end(), succ_begin(ToUpdate), succ_end(ToUpdate));
+    // worklist.insert(worklist.end(), succ_begin(ToUpdate), succ_end(ToUpdate));
+    // workaround adapted from: https://github.com/google/benchmark/pull/37/files
+    std::copy(succ_begin(ToUpdate), succ_end(ToUpdate), std::back_inserter(worklist));
   }
 }
 
