@@ -38,12 +38,6 @@ projects/*
 # Clang, which is tracked independently.
 tools/clang
 
-snkrs:llvm erich$ git st
-On branch swapstack
-Your branch is up-to-date with 'origin/swapstack'.
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-
 Debug+Asserts/**
 Makefile.config
 config.log
